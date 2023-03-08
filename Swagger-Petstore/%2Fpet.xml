@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/pet" path="/pet" id="843159cc-3611-408d-8512-500d4d8cb569" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="/pet" path="/pet" id="843159cc-3611-408d-8512-500d4d8cb569" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="843159cc-3611-408d-8512-500d4d8cb569fileName">%2Fpet</con:setting>
   </con:settings>
@@ -66,27 +66,46 @@
       <con:mediaType>application/xml</con:mediaType>
       <con:params/>
     </con:representation>
-    <con:request name="Request 1" id="09f6e341-2643-4156-b0b2-65129c9ba785" mediaType="application/json">
-      <con:settings/>
+    <con:request name="Request 1" id="09f6e341-2643-4156-b0b2-65129c9ba785" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
       <con:endpoint>http://petstore.swagger.io</con:endpoint>
       <con:request>{\r
-  "id" : 0,\r
-  "category" : {\r
-    "id" : 0,\r
-    "name" : "string"\r
-  },\r
-  "name" : "doggie",\r
-  "photoUrls" : [ "string" ],\r
-  "tags" : [ {\r
-    "id" : 0,\r
-    "name" : "string"\r
-  } ],\r
-  "status" : "available"\r
+   "id" : 0,\r
+   "category" : {\r
+      "id" : 0,\r
+      "name" : "string"\r
+   },\r
+   "name" : "doggie",\r
+   "photoUrls" : [\r
+      "string"\r
+   ],\r
+   "tags" : [\r
+      {\r
+         "id" : 0,\r
+         "name" : "string"\r
+      }\r
+   ],\r
+   "status" : "available"\r
 }</con:request>
+      <con:originalUri>https://petstore.swagger.io/v2/pet</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
       <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="21b08dc4-b55e-4684-b392-754038b35fa2">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
     </con:request>
-    <con:request name="Request 2" id="126aceeb-af44-40d6-9092-a733b58cde87" mediaType="application/xml">
-      <con:settings/>
+    <con:request name="Request 2" id="126aceeb-af44-40d6-9092-a733b58cde87" mediaType="application/xml" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
       <con:endpoint>http://petstore.swagger.io</con:endpoint>
       <con:request><![CDATA[<Pet>\r
    <id>0</id>\r
@@ -106,8 +125,24 @@
    </tag>\r
    <status>available</status>\r
 </Pet>]]></con:request>
+      <con:originalUri>https://petstore.swagger.io/v2/pet</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
       <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="21b08dc4-b55e-4684-b392-754038b35fa2">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
     </con:request>
+    <con:environmentSpec>
+      <con:entry environmentId="21b08dc4-b55e-4684-b392-754038b35fa2">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
   </con:method>
   <con:method name="updatePet" id="75f8338d-0750-4877-b676-41c94df3e1a4" method="PUT">
     <con:description>Update an existing pet</con:description>
@@ -208,7 +243,17 @@
   } ],\r
   "status" : "available"\r
 }</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
       <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="21b08dc4-b55e-4684-b392-754038b35fa2">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
     </con:request>
     <con:request name="Request 2" id="bba602f3-de88-41ae-bfba-2c17a9cfa1f1" mediaType="application/xml">
       <con:settings/>
@@ -231,7 +276,27 @@
    </tag>\r
    <status>available</status>\r
 </Pet>]]></con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
       <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="21b08dc4-b55e-4684-b392-754038b35fa2">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
     </con:request>
+    <con:environmentSpec>
+      <con:entry environmentId="21b08dc4-b55e-4684-b392-754038b35fa2">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
   </con:method>
+  <con:environmentSpec>
+    <con:entry environmentId="21b08dc4-b55e-4684-b392-754038b35fa2">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
 </con:resource>

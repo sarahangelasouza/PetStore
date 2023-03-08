@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<con:testSuite id="8cb16622-36aa-4c57-bb2a-da816d5fa1e7" name="PetObjects" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
-    <con:setting id="8cb16622-36aa-4c57-bb2a-da816d5fa1e7fileName">PetObjects</con:setting>
-  </con:settings>
-  <con:runType>SEQUENTIAL</con:runType>
-  <con:properties/>
-  <con:reportParameters/>
-</con:testSuite>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/pet/{petId}/uploadImage" path="/pet/{petId}/uploadImage" id="e542d77b-b15f-4784-ad40-be7202dd07df" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="/pet/{petId}/uploadImage" path="/pet/{petId}/uploadImage" id="e542d77b-b15f-4784-ad40-be7202dd07df" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="e542d77b-b15f-4784-ad40-be7202dd07dffileName">%2Fpet%2F%7BpetId%7D%2FuploadImage</con:setting>
   </con:settings>
@@ -40,10 +40,31 @@
       <con:mediaType>multipart/form-data</con:mediaType>
       <con:params/>
     </con:representation>
-    <con:request name="Request 1" id="cdd36cab-3b5b-4d9e-ad10-3e552beaf05b" mediaType="application/json">
+    <con:request name="Request 1" id="cdd36cab-3b5b-4d9e-ad10-3e552beaf05b" mediaType="application/json" postQueryString="false">
       <con:settings/>
       <con:endpoint>http://petstore.swagger.io</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
       <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="21b08dc4-b55e-4684-b392-754038b35fa2">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
     </con:request>
+    <con:environmentSpec>
+      <con:entry environmentId="21b08dc4-b55e-4684-b392-754038b35fa2">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
   </con:method>
+  <con:environmentSpec>
+    <con:entry environmentId="21b08dc4-b55e-4684-b392-754038b35fa2">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
 </con:resource>

@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="3f577318-7d42-411f-a1df-5e97976c13c6" created="3.30.0" activeEnvironment="Default environment" name="PetStore" resourceRoot="" compositeProjectFormat="1.3" updated="3.30.0" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings/>
+<con:soapui-project id="3f577318-7d42-411f-a1df-5e97976c13c6" created="3.30.0" activeEnvironment="Default environment" name="PetStore" resourceRoot="" compositeProjectFormat="1.3" updated="3.44.0" encryptionMode="Not encrypted" projectVersion="" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="3f577318-7d42-411f-a1df-5e97976c13c6fileName">PetStore</con:setting>
+  </con:settings>
   <con:requirements/>
-  <con:properties/>
+  <con:properties>
+    <con:property>
+      <con:name>abc</con:name>
+      <con:value>123</con:value>
+    </con:property>
+  </con:properties>
   <con:wssContainer/>
   <con:databaseConnectionContainer/>
   <con:jmsConnectionContainer/>
   <con:oAuth2ProfileContainer/>
   <con:oAuth1ProfileContainer/>
-  <con:reporting/>
   <con:eventHandlers type="RequestFilter.filterRequest" name="RequestFilter.filterRequest">
     <con:script>// Sample event script to add custom HTTP header to all outgoing REST, SOAP and HTTP(S) calls
 // This code is often used for adding custom authentication to ReadyAPI functional tests
@@ -38,6 +44,22 @@
 // pw.close()
 // fos.close()</con:script>
   </con:eventHandlers>
+  <con:environment id="21b08dc4-b55e-4684-b392-754038b35fa2" name="Pet Virt ENV" index="0">
+    <con:service type="REST" name="Swagger Petstore">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">http://localhost:8090</con:endpoint>
+    </con:service>
+    <con:property>
+      <con:name>abc</con:name>
+      <con:value/>
+    </con:property>
+    <con:databaseConnectionContainer/>
+    <con:jmsConnectionContainer/>
+  </con:environment>
   <con:authRepository/>
+  <con:environmentSpec>
+    <con:entry environmentId="21b08dc4-b55e-4684-b392-754038b35fa2">
+      <con:authProfile>No Authorization</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
   <con:tags/>
 </con:soapui-project>

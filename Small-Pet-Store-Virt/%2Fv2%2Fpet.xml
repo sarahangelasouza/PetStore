@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="/v2/pet" method="POST" resourcePath="/v2/pet" id="d7f5ea0a-fecf-459d-bf87-b71718851380" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="d7f5ea0a-fecf-459d-bf87-b71718851380fileName">%2Fv2%2Fpet</con:setting>
+  </con:settings>
+  <con:defaultResponse>El Perro</con:defaultResponse>
+  <con:dispatchStyle>QUERY_MATCH</con:dispatchStyle>
+  <con:dispatchConfig xsi:type="con:MockOperationQueryMatchDispatch" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:query>
+      <con:name>El Perro Match</con:name>
+      <con:type>JSONPath</con:type>
+      <con:query>$['name']</con:query>
+      <con:match>El Perro</con:match>
+      <con:response>El Perro</con:response>
+    </con:query>
+    <con:query>
+      <con:name>El Gato Match</con:name>
+      <con:type>JSONPath</con:type>
+      <con:query>$['name']</con:query>
+      <con:match>El Gato</con:match>
+      <con:response>El Gato</con:response>
+    </con:query>
+  </con:dispatchConfig>
+  <con:dispatchXPath/>
+  <con:parameterDispatcherRuleContainer/>
+  <con:routeEnabled>false</con:routeEnabled>
+  <con:conditionalRoutingEnabled>false</con:conditionalRoutingEnabled>
+  <con:routeScript/>
+  <con:saveRoutedResponse>false</con:saveRoutedResponse>
+  <con:response name="El Perro" id="21967acc-5bfb-48d9-9150-a84f3dee75f8" httpResponseStatus="200" mediaType="application/json" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200035a000a636f6d707265737365644c000b636f6d7072657373696f6e74003d4c636f6d2f657669776172652f736f617075692f696d706c2f737570706f72742f436f6d7072657373656456616c756524436f6d7072657373696f6e3b5b0004646174617400025b427870007e72003b636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c756524436f6d7072657373696f6e00000000000000001200007872000e6a6176612e6c616e672e456e756d000000000000000012000078707400044e4f4e4570" dataSource="">
+    <con:settings/>
+    <con:responseContent>{
+   "id" : 9223372036854775807,
+   "category" : {
+      "id" : 0,
+      "name" : "string"
+   },
+   "name" : "El Perro",
+   "photoUrls" : [
+      "string"
+   ],
+   "tags" : [
+      {
+         "id" : 0,
+         "name" : "string"
+      }
+   ],
+   "status" : "available",
+   "additional info" : "El perro, el perro, es mi corazon." 
+}</con:responseContent>
+    <con:header>
+      <con:name>Server</con:name>
+      <con:value>awselb/2.0</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Connection</con:name>
+      <con:value>keep-alive</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Date</con:name>
+      <con:value>Mon, 28 Nov 2022 14:42:43 GMT</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Location</con:name>
+      <con:value>https://petstore.swagger.io:443/v2/pet</con:value>
+    </con:header>
+  </con:response>
+  <con:response name="El Gato" id="ec7df1c7-04e0-43a4-9445-9ccc8a1d4536" httpResponseStatus="200" mediaType="application/json" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200035a000a636f6d707265737365644c000b636f6d7072657373696f6e74003d4c636f6d2f657669776172652f736f617075692f696d706c2f737570706f72742f436f6d7072657373656456616c756524436f6d7072657373696f6e3b5b0004646174617400025b427870007e72003b636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c756524436f6d7072657373696f6e00000000000000001200007872000e6a6176612e6c616e672e456e756d000000000000000012000078707400044e4f4e4570" dataSource="">
+    <con:settings/>
+    <con:responseContent>{
+   "id" : 9223372036854775807,
+   "category" : {
+      "id" : 0,
+      "name" : "string"
+   },
+   "name" : "El Gato",
+   "photoUrls" : [
+      "string"
+   ],
+   "tags" : [
+      {
+         "id" : 0,
+         "name" : "string"
+      }
+   ],
+   "status" : "available",
+   "additional info" : "El gato, el gato, el gato es no bueno."
+}</con:responseContent>
+    <con:header>
+      <con:name>Server</con:name>
+      <con:value>awselb/2.0</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Connection</con:name>
+      <con:value>keep-alive</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Date</con:name>
+      <con:value>Mon, 28 Nov 2022 14:43:29 GMT</con:value>
+    </con:header>
+    <con:header>
+      <con:name>Location</con:name>
+      <con:value>https://petstore.swagger.io:443/v2/pet</con:value>
+    </con:header>
+  </con:response>
+</con:restMockAction>

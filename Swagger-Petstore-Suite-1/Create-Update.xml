@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="e6508bcd-cc63-4117-888e-ab85f6b8318a" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Create Update" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="e6508bcd-cc63-4117-888e-ab85f6b8318afileName">Create-Update</con:setting>
+  </con:settings>
+  <con:testStep type="datasource" name="DS-PetNameGenerator" id="3cb3f4b0-6763-421a-a312-07c2b9bbd849">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Data Generator">
+        <con:configuration>
+          <generatedDataCount>5</generatedDataCount>
+          <generatorsTotalNumber>1</generatorsTotalNumber>
+          <lastSelectedProperty>0</lastSelectedProperty>
+          <GeneratorType0>NAME</GeneratorType0>
+          <PropertyName0>PetName</PropertyName0>
+          <repetitionCountPetName>0</repetitionCountPetName>
+          <repeatValuesPetName>false</repeatValuesPetName>
+          <NameTypeName0>LastName</NameTypeName0>
+          <NameGenderName0>Any</NameGenderName0>
+          <escapeSpaceSequence/>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>PetName</con:property>
+      <con:restartOnRun>true</con:restartOnRun>
+      <con:stopDatasourceExhausted>false</con:stopDatasourceExhausted>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="CreatePet" id="ba452c1b-06c0-479b-a4e4-8f000b927352">
+    <con:settings/>
+    <con:config service="Swagger Petstore" resourcePath="/v2/pet" methodName="addPet" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="CreatePet" id="09f6e341-2643-4156-b0b2-65129c9ba785" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://petstore.swagger.io</con:endpoint>
+        <con:request>{\r
+   "id" : 0,\r
+   "category" : {\r
+      "id" : 0,\r
+      "name" : "string"\r
+   },\r
+   "name" : "doggie",\r
+   "photoUrls" : [\r
+      "string"\r
+   ],\r
+   "tags" : [\r
+      {\r
+         "id" : 0,\r
+         "name" : "string"\r
+      }\r
+   ],\r
+   "status" : "available"\r
+}</con:request>
+        <con:originalUri>https://petstore.swagger.io/v2/pet</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="1400bba6-1141-4ee6-af5c-0133a90fbcef" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="adb6894d-3a81-4d36-96cb-335d965b2326" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="21b08dc4-b55e-4684-b392-754038b35fa2">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="transfer" name="PT-Set PetID property" id="c05b9a4b-ec34-45cd-a50f-b38455b40feb">
+    <con:settings/>
+    <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+        <con:name>PetIDNumber</con:name>
+        <con:sourceType>Response</con:sourceType>
+        <con:sourceStep>CreatePet</con:sourceStep>
+        <con:sourcePath>$['id']</con:sourcePath>
+        <con:targetType>TC-PetID</con:targetType>
+        <con:targetStep>#TestCase#</con:targetStep>
+        <con:targetPath/>
+        <con:type>JSONPATH</con:type>
+        <con:targetTransferType>JSONPATH</con:targetTransferType>
+        <con:upgraded>true</con:upgraded>
+      </con:transfers>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="delay" name="Delay" id="51d50dc0-1a93-4109-8033-b444605e7c9b">
+    <con:settings/>
+    <con:config>
+      <delay>100</delay>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="UpdatePet-Name" id="bda28df1-483d-43e8-bd7f-28207aa32959">
+    <con:settings/>
+    <con:config service="Swagger Petstore" resourcePath="/v2/pet" methodName="updatePet" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="UpdatePet-Name" id="2d66bc00-359b-4fdf-b3b2-3c2313b61cc5" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://petstore.swagger.io</con:endpoint>
+        <con:request>{\r
+   "id" : "${CreatePet#Response#$['id']}",\r
+   "category" : {\r
+      "id" : 0,\r
+      "name" : "string"\r
+   },\r
+   "name" : "${DS-PetNameGenerator#PetName}",\r
+   "photoUrls" : [\r
+      "string"\r
+   ],\r
+   "tags" : [\r
+      {\r
+         "id" : 0,\r
+         "name" : "string"\r
+      }\r
+   ],\r
+   "status" : "available"\r
+}</con:request>
+        <con:originalUri>https://petstore.swagger.io/v2/pet</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="a94bed22-2ead-427b-b9f1-0f3be5c00cb1" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="335cc415-90f0-4e80-872a-b34bc679d709" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="21b08dc4-b55e-4684-b392-754038b35fa2">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="delay" name="Delay 2" id="4a52da8a-a56c-41aa-a5b2-dfc4867719a7">
+    <con:settings/>
+    <con:config>
+      <delay>100</delay>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasourceloop" name="DSLoop Create" id="9b6a1964-f7af-49dd-a484-d1e8f984c6fc">
+    <con:settings/>
+    <con:config>
+      <dataSourceStep>DS-PetNameGenerator</dataSourceStep>
+      <targetStep>CreatePet</targetStep>
+      <discardResults>false</discardResults>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>TC-PetID</con:name>
+      <con:value>9223372036854775807</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>77a5167b-cac6-4b35-9fe3-36330f1275bb</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>5ace1f5d-a01d-4af6-9589-97292eb368fa</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>546f1972-e53f-494d-8ade-0ae8dd2d4388</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>edfa74c6-5f00-4784-987f-790744589543</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>a874cd81-ab9c-4e99-8685-1d1cedad66fb</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>37b0f0c6-5a6c-4bf7-8e33-1f881f0b1acb</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>ce668889-549a-409b-8b71-4b517750950d</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>6a7ea81d-468e-46d7-9d59-60f01b6aeb55</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>f59086cd-10b0-4f96-906d-74b8740fc701</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>1a66ef2e-9222-47a1-9ad9-4e7d28278a65</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>ca294018-1b76-4d06-84b1-11e552253b30</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>ad31f599-afd3-4adb-8de5-92443e44b46a</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>3896e3a0-fbc2-4d8b-965a-1a82c64d9f0d</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+</con:testCase>

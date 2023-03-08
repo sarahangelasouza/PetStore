@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/user/createWithList" path="/user/createWithList" id="84a10f4d-808f-40f8-8076-5c8f5f678cde" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="/user/createWithList" path="/user/createWithList" id="84a10f4d-808f-40f8-8076-5c8f5f678cde" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="84a10f4d-808f-40f8-8076-5c8f5f678cdefileName">%2Fuser%2FcreateWithList</con:setting>
   </con:settings>
@@ -21,7 +21,28 @@
     <con:request name="Request 1" id="c91e1192-cc3f-48d8-8af3-6e318db63827" mediaType="application/json">
       <con:settings/>
       <con:endpoint>http://petstore.swagger.io</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
       <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="21b08dc4-b55e-4684-b392-754038b35fa2">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
     </con:request>
+    <con:environmentSpec>
+      <con:entry environmentId="21b08dc4-b55e-4684-b392-754038b35fa2">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
   </con:method>
+  <con:environmentSpec>
+    <con:entry environmentId="21b08dc4-b55e-4684-b392-754038b35fa2">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
 </con:resource>

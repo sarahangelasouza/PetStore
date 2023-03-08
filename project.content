@@ -12,4 +12,14 @@ Swagger-Petstore\%2Fuser%2FcreateWithList.xml
 Swagger-Petstore\%2Fuser%2Flogin.xml
 Swagger-Petstore\%2Fuser%2Flogout.xml
 Swagger-Petstore\%2Fuser%2F%7Busername%7D.xml
-PetObjects\AddPet-GetPet-Json.xml
+Swagger-Petstore-Suite-1\%2Fpet%2F%7BpetId%7D-Test-Case.xml
+Swagger-Petstore-Suite-1\%2Fpet-Test-Case.xml
+Swagger-Petstore-Suite-1\TestVirt.xml
+Swagger-Petstore-Suite-1\XML-Test.xml
+Swagger-Petstore-Suite-1\CrUD.xml
+Swagger-Petstore-Suite-1\CrUD-rework.xml
+Swagger-Petstore-Suite-1\Create-Update.xml
+Swagger-Petstore-Suite-1\Delete.xml
+Small-Pet-Store-Virt\%2Fv2%2Fpet%2F%7BpetId%7D.xml
+Small-Pet-Store-Virt\%2Fv2%2Fpet%2F%7BpetId%7D1.xml
+Small-Pet-Store-Virt\%2Fv2%2Fpet.xml

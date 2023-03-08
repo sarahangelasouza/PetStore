@@ -12,6 +12,12 @@
     </con:part>
   </con:definitionCache>
   <con:endpoints>
+    <con:endpoint>http://localhost:8090/</con:endpoint>
     <con:endpoint>http://petstore.swagger.io</con:endpoint>
   </con:endpoints>
+  <con:environmentSpec>
+    <con:entry environmentId="21b08dc4-b55e-4684-b392-754038b35fa2">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
 </con:interface>
